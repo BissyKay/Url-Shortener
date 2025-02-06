@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSecure URL Shortener</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input, button { margin-top: 10px; padding: 8px; }
+    </style>
+</head>
+<body>
+    <h1>CyberSecure URL Shortener</h1>
+    <p>Created by <strong>Bisola Kayode</strong> | <a href="https://github.com/BissyKay">GitHub</a></p>
+    
+    <form method="post">
+        <label for="long_url">Enter a URL to shorten securely:</label><br>
+        <input type="url" id="long_url" name="long_url" required>
+        <button type="submit">Shorten</button>
+    </form>
+
+    {% if short_url %}
+        <p>Original URL: <a href="{{ long_url }}" target="_blank">{{ long_url }}</a></p>
+        <p>Shortened URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
+    {% endif %}
+</body>
+</html>
